@@ -1,0 +1,13 @@
+web: 
+  image: nginx
+  ports: 
+    - "80:80"
+  volumes: 
+    - /wwwroot:/www
+    - ./hello.docker.conf:/etc/nginx/conf.d/hello.docker.conf
+  links: 
+    - php  
+php: 
+  image: php:7.3.9-fpm
+  volumes: 
+    - /wwwroot:/www
