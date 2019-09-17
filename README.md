@@ -19,7 +19,9 @@
 ### Build from Dockerfile
 
 启动PHP-FPM
-- docker run --name freeaihub-php -d -v /wwwroot:/wwwroot php:7.3.9-fpm
+- cd fpm
+- docker build -t fah .
+- docker run --name freeaihub-php -d -v /wwwroot:/wwwroot fah
 
 
 启动Nginx容器
