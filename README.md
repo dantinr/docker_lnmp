@@ -11,9 +11,10 @@
 - php artisan key:generate
 
 
-## Nginx + PHP-FPM 
+## Nginx + PHP-FPM + MYSQL
 - docker pull nginx
 - docker pull php:7.3.9-fpm
+- docker pull mysql:5.7.27
 
 ### Build from Dockerfile
 
