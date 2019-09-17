@@ -1,3 +1,15 @@
+## WEBROOT
+- mkdir /wwwroot
+
+## Clone code
+- cd /wwwroot
+- git clone git@gitlab.com:dantinr/fah_www.git (提前配置公钥)
+- cd fah_www
+- composer install -vvv
+- chmod -R 777 storage
+- cp .env.example .env
+- php artisan key:generate
+
 
 ## Nginx + PHP-FPM 
 - docker pull nginx
@@ -12,3 +24,4 @@
 启动Nginx容器
 - docker build -t freeaihub-nginx .
 - docker run --name nginx -d -p 80:80 -v /wwwroot:/wwwroot --link freeaihub-php freeaihub-nginx
+
