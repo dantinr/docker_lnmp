@@ -18,13 +18,18 @@
 
 ### Build from Dockerfile
 
+启动MySQL
+- cd mysql
+- docker build -t fah-mysql .
+- docker run --name mysql -p 3306:3306  -e MYSQL_ROOT_PASSWORD=fah_xxoo_2019+- -d fah-mysql
+- 测试 mysql -h127.0.0.1 -uroot -pfah_xxoo_2019+-
+
 启动PHP-FPM
 - cd fpm
-- docker build -t fah .
-- docker run --name freeaihub-php -d -v /wwwroot:/wwwroot fah
-
+- docker build -t fah-fpm .
+- docker run --name php-fpm --link mysql -d -v /wwwroot:/wwwroot fah-fpm
 
 启动Nginx容器
-- docker build -t freeaihub-nginx .
-- docker run --name nginx -d -p 80:80 -v /wwwroot:/wwwroot --link freeaihub-php freeaihub-nginx
+- docker build -t fah-nginx .
+- docker run --name nginx --link php-fpm -d -p 80:80 -v /wwwroot:/wwwroot fah-nginx
 
