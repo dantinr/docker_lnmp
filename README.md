@@ -27,7 +27,7 @@
 启动PHP-FPM
 - cd fpm
 - docker build -t fah-fpm .
-- docker run --name php-fpm --link mysql -d -v /wwwroot:/wwwroot fah-fpm
+- docker run --name php-fpm -d -v /wwwroot:/wwwroot fah-fpm
 
 启动Nginx容器
 - docker build -t fah-nginx .
