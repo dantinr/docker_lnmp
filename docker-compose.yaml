@@ -1,5 +1,9 @@
 mysql: 
   image: fah-mysql
+  environment: 
+    MYSQL_ROOT_PASSWORD: "fah_xxoo_2019+-"
+  ports: 
+    - "3306:3306"
 
 php-fpm: 
   image: fah-fpm
@@ -12,6 +16,6 @@ web:
     - "80:80"
   volumes: 
     - /wwwroot:/wwwroot
-    - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
+    - ./nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
   links: 
-    - php
+    - php-fpm
