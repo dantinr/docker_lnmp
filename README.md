@@ -3,8 +3,8 @@
 
 ## Clone code
 - cd /wwwroot
-- git clone git@gitlab.com:dantinr/fah_www.git (提前配置公钥)
-- cd fah_www
+- git clone xxxx
+- cd xxxx
 - composer install -vvv
 - chmod -R 777 storage
 - cp .env.example .env
@@ -27,7 +27,7 @@
 启动PHP-FPM
 - cd fpm
 - docker build -t fah-fpm .
-- docker run --name php-fpm -d -v /wwwroot:/wwwroot fah-fpm
+- docker run --name php-fpm --link mysql -d -v /wwwroot:/wwwroot fah-fpm
 
 启动Nginx容器
 - docker build -t fah-nginx .
