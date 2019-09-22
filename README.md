@@ -21,7 +21,7 @@
 启动MySQL
 - cd mysql
 - docker build -t fah-mysql .
-- docker run --name mysql -p 3306:3306  -e MYSQL_ROOT_PASSWORD=fah_xxoo_2019+- -d fah-mysql
+- docker run --name mysql -p 3306:3306 -v /wwwroot/mysql_data:/var/lib/mysql  -e MYSQL_ROOT_PASSWORD=fah_xxoo_2019+- -d fah-mysql
 - 测试 mysql -h127.0.0.1 -uroot -pfah_xxoo_2019+-
 
 启动PHP-FPM
